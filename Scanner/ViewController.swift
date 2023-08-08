@@ -22,6 +22,7 @@ class ViewController: UIViewController {
 //            imagePickerController.modalPresentationStyle = .popover
 //            present(imagePickerController, animated: true, completion: nil)
 //        }
+        captureSession.startRunning()
     }
 }
 
@@ -41,7 +42,7 @@ extension ViewController {
         video = AVCaptureVideoPreviewLayer(session: captureSession)
         video.frame = view.frame
         view.layer.addSublayer(video)
-        captureSession.startRunning()
+//        captureSession.startRunning()
     }
 }
 
