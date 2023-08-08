@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B482E8C12A82D12D007135AE /* WhatsNew in Frameworks */ = {isa = PBXBuildFile; productRef = B482E8C02A82D12D007135AE /* WhatsNew */; };
 		B483A6F825ECCBEC00BEE61A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483A6F725ECCBEC00BEE61A /* AppDelegate.swift */; };
 		B483A6FA25ECCBEC00BEE61A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483A6F925ECCBEC00BEE61A /* SceneDelegate.swift */; };
 		B483A6FC25ECCBEC00BEE61A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B483A6FB25ECCBEC00BEE61A /* ViewController.swift */; };
@@ -31,6 +32,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B482E8C12A82D12D007135AE /* WhatsNew in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +85,9 @@
 			dependencies = (
 			);
 			name = Scanner;
+			packageProductDependencies = (
+				B482E8C02A82D12D007135AE /* WhatsNew */,
+			);
 			productName = Scanner;
 			productReference = B483A6F425ECCBEC00BEE61A /* Scanner.app */;
 			productType = "com.apple.product-type.application";
@@ -110,6 +115,9 @@
 				Base,
 			);
 			mainGroup = B483A6EB25ECCBEC00BEE61A;
+			packageReferences = (
+				B482E8BF2A82D12D007135AE /* XCRemoteSwiftPackageReference "WhatsNew" */,
+			);
 			productRefGroup = B483A6F525ECCBEC00BEE61A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -341,6 +349,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B482E8BF2A82D12D007135AE /* XCRemoteSwiftPackageReference "WhatsNew" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/nishanttaneja/WhatsNew";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B482E8C02A82D12D007135AE /* WhatsNew */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B482E8BF2A82D12D007135AE /* XCRemoteSwiftPackageReference "WhatsNew" */;
+			productName = WhatsNew;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B483A6EC25ECCBEC00BEE61A /* Project object */;
 }
