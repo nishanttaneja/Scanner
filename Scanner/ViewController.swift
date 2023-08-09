@@ -74,19 +74,16 @@ extension ViewController: AVCaptureMetadataOutputObjectsDelegate {
 }
 
 // MARK: - What's New
-extension ViewController: WNViewControllerDataSource {
+extension ViewController {
     private func displayWhatsNew() {
-        let controller = WNViewController()
-        controller.dataSource = self
-        present(controller, animated: true)
-    }
-    
-    // MARK: DataSource
-    func itemsForWhatsNewViewController() -> [WNItem] {
-        [
+        let appVersion = Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "1.0"
+        let controller = WNViewController(items: [
+            WNItem(image: .init(systemName: "chevron.left.forwardslash.chevron.right")!, title: "Display New Features Only Once", description: "If the current app version is not same as saved by WhatsNew Library, only then What's New screen will be displayed."),
             WNItem(image: .init(systemName: "newspaper")!, title: "What's New", description: "Discover new features. When new features are added, they will be displayed here."),
             WNItem(image: .init(systemName: "barcode.viewfinder")!, title: "Barcode Scan", description: "Scan any Barcode. The result will be displayed in alert sheet."),
             WNItem(image: .init(systemName: "qrcode.viewfinder")!, title: "QR Code Scan", description: "Scan any QR Code. The result will be displayed in alert sheet.")
-        ]
+        ], appVersion: appVersion)
+        guard controller.shouldDisplayWhatsNew() else { return }
+        present(controller, animated: true)
     }
 }
